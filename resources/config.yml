@@ -1,0 +1,27 @@
+##################
+#### PE MMO ######
+##################
+
+## Level Requirements
+
+# Mining (How many blocks should the player have to break)
+mining.lvl1: 128
+
+mining.lvl2: 500
+
+mining.lvl3: 1000
+
+mining.lvl4: 2500
+
+mining.lvl5: 5000
+
+# Tree cutting
+treecutting.lvl1: 128
+
+treecutting.lvl2: 500
+
+treecutting.lvl3: 1000
+
+treecutting.lvl4: 2500
+
+treecutting.lvl5: 5000

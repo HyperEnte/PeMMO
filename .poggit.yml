@@ -1,0 +1,9 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/HyperEnte-PHP/PeMMO
+build-by-default: true
+branches:
+- master
+projects:
+  PeMMO:
+    icon: "PeMMO.png"
+    path: ""
+...

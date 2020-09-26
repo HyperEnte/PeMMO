@@ -17,7 +17,7 @@ class MMO extends PluginBase{
 		@mkdir($this->getDataFolder()."/MMOStats");
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
 
-		$this->getServer()->getCommandMap()->registerAll("MMO",
+		$this->getServer()->getCommandMap()->registerAll("PeMMO",
 		[
 			new MMOCommand()
 		]);

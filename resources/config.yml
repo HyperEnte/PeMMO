@@ -26,10 +26,26 @@ treecutting.lvl4: 2500
 
 treecutting.lvl5: 5000
 
+# Crafting
+crafting.lvl1: 64
+
+crafting.lvl2: 128
+
+crafting.lvl3: 256
+
+crafting.lvl4: 512
+
+crafting.lvl5: 1028
+
+# Use the Item ID (264 = Diamond)
+crafting.reward.item: 264
+
 ## Messages
 levelup.mining: "§aYou are now Mining Level §e[LEVEL]§a. You have now a [LEVELPERCENT] Chance to get Double Ores"
 
 levelup.treecutting: "§aYou are now Treecutting Level §e[LEVEL]§a. You have now a [LEVELPERCENT] Chance to get an apple"
 
+levelup.crafting: "§aYou are now Crafting Level §e[LEVEL]§a. You have now a [LEVELPERCENT] Chance to get a bonus item"
+
 # [MINING] = Mining Skill , [TREECUTTING] = Treecutting Skill , [LINE] = New line
-stats.message: "§aYour MMO Stats: [LINE] §bMining: [MINING] [LINE] §cTreecutting: [TREECUTTING]"
+stats.message: "§aYour MMO Stats: [LINE] §bMining: [MINING] [LINE] §cTreecutting: [TREECUTTING] [LINE] §dCrafting: [CRAFTING]"

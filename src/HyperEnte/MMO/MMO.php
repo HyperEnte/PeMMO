@@ -84,4 +84,32 @@ class MMO extends PluginBase{
 			$player->sendMessage($lvlmsg);
 		}
 	}
+	public function giveCrafting(Player $player){
+		$name = $player->getName();
+		$c = new Config(MMO::getMain()->getDataFolder()."/MMOStats/mmo.json", Config::JSON);
+		$array = (array)$c->get("$name");
+		$array["crafting"] = (int)$array["crafting"]+1;
+		$c->set("$name", $array);
+		$c->save();
+		if($array["crafting"] === $this->getConfig()->get("crafting.lvl1")){
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["1", "10%"], $this->getConfig()->get("levelup.crafting"));
+			$player->sendMessage($lvlmsg);
+		}
+		if($array["crafting"] === $this->getConfig()->get("crafting.lvl2")){
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["2", "25%"], $this->getConfig()->get("levelup.crafting"));
+			$player->sendMessage($lvlmsg);
+		}
+		if($array["crafting"] === $this->getConfig()->get("crafting.lvl3")){
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["3", "50%"], $this->getConfig()->get("levelup.crafting"));
+			$player->sendMessage($lvlmsg);
+		}
+		if($array["crafting"] === $this->getConfig()->get("crafting.lvl4")){
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["4", "75%"], $this->getConfig()->get("levelup.crafting"));
+			$player->sendMessage($lvlmsg);
+		}
+		if($array["crafting"] === $this->getConfig()->get("crafting.lvl5")){
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["5", "100%"], $this->getConfig()->get("levelup.crafting"));
+			$player->sendMessage($lvlmsg);
+		}
+	}
 }

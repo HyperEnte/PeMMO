@@ -3,6 +3,7 @@
 namespace HyperEnte\MMO;
 
 use pocketmine\block\Block;
+use pocketmine\event\inventory\CraftItemEvent;
 use pocketmine\event\Listener;
 use pocketmine\item\Item;
 use pocketmine\utils\Config;
@@ -16,7 +17,7 @@ class EventListener implements Listener{
 		$c = new Config(MMO::getMain()->getDataFolder()."/MMOStats/mmo.json", Config::JSON);
 		$name = $event->getPlayer()->getName();
 		if($c->get($name) == false) {
-			$c->set("$name", ["mining" => 0, "treecutting" => 0]);
+			$c->set("$name", ["mining" => 0, "treecutting" => 0, "crafting" => 0]);
 			$c->save();
 		}
 
@@ -251,6 +252,35 @@ class EventListener implements Listener{
 							$event->setDrops([Item::get(Item::APPLE, 0, 1), Item::get(Item::WOOD2)]);
 						}
 				}
+			}
+		}
+	}
+
+	public function onCraft(CraftItemEvent $event){
+
+		$player = $event->getPlayer();
+		$name = $player->getName();
+		MMO::getMain()->giveCrafting($event->getPlayer());
+		$c = new Config(MMO::getMain()->getDataFolder()."/MMOStats/mmo.json", Config::JSON);
+		$info = $c->get("$name");
+		if($info["crafting"] >= MMO::getMain()->getConfig()->get("crafting.lvl1") AND $info["crafting"] <= MMO::getMain()->getConfig()->get("crafting.lvl2")){
+			if(mt_rand(1, 1000) % 50 <= 0){
+				$player->getInventory()->addItem(Item::get(MMO::getMain()->getConfig()->get("crafting.reward.item")));
+			}
+		}
+		if($info["crafting"] >= MMO::getMain()->getConfig()->get("crafting.lvl2") AND $info["crafting"] <= MMO::getMain()->getConfig()->get("crafting.lvl3")){
+			if(mt_rand(1, 1000) % 100 <= 0){
+				$player->getInventory()->addItem(Item::get(MMO::getMain()->getConfig()->get("crafting.reward.item")));
+			}
+		}
+		if($info["crafting"] >= MMO::getMain()->getConfig()->get("crafting.lvl3") AND $info["crafting"] <= MMO::getMain()->getConfig()->get("crafting.lvl4")){
+			if(mt_rand(1, 1000) % 200 <= 0){
+				$player->getInventory()->addItem(Item::get(MMO::getMain()->getConfig()->get("crafting.reward.item")));
+			}
+		}
+		if($info["crafting"] >= MMO::getMain()->getConfig()->get("crafting.lvl4") AND $info["crafting"] <= MMO::getMain()->getConfig()->get("crafting.lvl5")){
+			if(mt_rand(1, 1000) % 300 <= 0){
+				$player->getInventory()->addItem(Item::get(MMO::getMain()->getConfig()->get("crafting.reward.item")));
 			}
 		}
 	}

@@ -32,7 +32,6 @@ class EventListener implements Listener{
 				$info = $c->get("$name");
 				if($info["mining"] >= MMO::getMain()->getConfig()->get("mining.lvl1") AND $info["mining"] <= MMO::getMain()->getConfig()->get("mining.lvl2")){
 					if(mt_rand(1, 1000) % 100 <= 0){
-						$event->getPlayer()->sendMessage("...");
 							if($event->getBlock()->getId() === Block::STONE) {
 								$event->setDrops([Item::get(Item::COBBLESTONE, 0, 2)]);
 							}
@@ -280,6 +279,11 @@ class EventListener implements Listener{
 		}
 		if($info["crafting"] >= MMO::getMain()->getConfig()->get("crafting.lvl4") AND $info["crafting"] <= MMO::getMain()->getConfig()->get("crafting.lvl5")){
 			if(mt_rand(1, 1000) % 300 <= 0){
+				$player->getInventory()->addItem(Item::get(MMO::getMain()->getConfig()->get("crafting.reward.item")));
+			}
+		}
+		if($info["crafting"] >= MMO::getMain()->getConfig()->get("crafting.lvl5")){
+			if(mt_rand(1, 1000) % 400 <= 0){
 				$player->getInventory()->addItem(Item::get(MMO::getMain()->getConfig()->get("crafting.reward.item")));
 			}
 		}

@@ -17,7 +17,7 @@ class MMO extends PluginBase{
 		@mkdir($this->getDataFolder()."/MMOStats");
 		$this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
 
-		$this->getServer()->getCommandMap()->registerAll("PeMMO",
+		$this->getServer()->getCommandMap()->registerAll("MMO",
 		[
 			new MMOCommand()
 		]);
@@ -34,20 +34,26 @@ class MMO extends PluginBase{
 		$array["mining"] = (int)$array["mining"]+1;
 		$c->set("$name", $array);
 		$c->save();
+
 		if($array["mining"] === $this->getConfig()->get("mining.lvl1")){
-			$player->sendMessage("§aYou are now Mining Level §e1§a. You have now a 10% Chance to get Double Ores");
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["1", "10%"], $this->getConfig()->get("levelup.mining"));
+			$player->sendMessage($lvlmsg);
 		}
 		if($array["mining"] === $this->getConfig()->get("mining.lvl2")){
-			$player->sendMessage("§aYou are now Mining Level §e2§a. You have now a 25% Chance to get Double Ores");
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["2", "25%"], $this->getConfig()->get("levelup.mining"));
+			$player->sendMessage($lvlmsg);
 		}
 		if($array["mining"] === $this->getConfig()->get("mining.lvl3")){
-			$player->sendMessage("§aYou are now Mining Level §e3§a. You have now a 50% Chance to get Double Ores");
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["3", "50%"], $this->getConfig()->get("levelup.mining"));
+			$player->sendMessage($lvlmsg);
 		}
 		if($array["mining"] === $this->getConfig()->get("mining.lvl4")){
-			$player->sendMessage("§aYou are now Mining Level §e4§a. You have now a 75% Chance to get Double Ores");
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["4", "75%"], $this->getConfig()->get("levelup.mining"));
+			$player->sendMessage($lvlmsg);
 		}
 		if($array["mining"] === $this->getConfig()->get("mining.lvl5")){
-			$player->sendMessage("§aYou are now Mining Level §e5§a. You have now a 100% Chance to get Double Ores");
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["5", "100%"], $this->getConfig()->get("levelup.mining"));
+			$player->sendMessage($lvlmsg);
 		}
 	}
 	public function giveTree(Player $player){
@@ -58,19 +64,24 @@ class MMO extends PluginBase{
 		$c->set("$name", $array);
 		$c->save();
 		if($array["treecutting"] === $this->getConfig()->get("treecutting.lvl1")){
-			$player->sendMessage("§aYou are now Treecutting Level §e1§a. You have now a 10% Chance to get an apple");
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["1", "10%"], $this->getConfig()->get("levelup.treecutting"));
+			$player->sendMessage($lvlmsg);
 		}
 		if($array["treecutting"] === $this->getConfig()->get("treecutting.lvl2")){
-			$player->sendMessage("§aYou are now Treecutting Level §e2§a. You have now a 25% Chance to get an apple");
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["2", "25%"], $this->getConfig()->get("levelup.treecutting"));
+			$player->sendMessage($lvlmsg);
 		}
 		if($array["treecutting"] === $this->getConfig()->get("treecutting.lvl3")){
-			$player->sendMessage("§aYou are now Treecutting Level §e3§a. You have now a 50% Chance to get an apple");
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["3", "50%"], $this->getConfig()->get("levelup.treecutting"));
+			$player->sendMessage($lvlmsg);
 		}
 		if($array["treecutting"] === $this->getConfig()->get("treecutting.lvl4")){
-			$player->sendMessage("§aYou are now Treecutting Level §e4§a. You have now a 75% Chance to get an apple");
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["4", "75%"], $this->getConfig()->get("levelup.treecutting"));
+			$player->sendMessage($lvlmsg);
 		}
 		if($array["treecutting"] === $this->getConfig()->get("treecutting.lvl5")){
-			$player->sendMessage("§aYou are now Treecutting Level §e5§a. You have now a 100% Chance to get an apple");
+			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["5", "100%"], $this->getConfig()->get("levelup.treecutting"));
+			$player->sendMessage($lvlmsg);
 		}
 	}
 }

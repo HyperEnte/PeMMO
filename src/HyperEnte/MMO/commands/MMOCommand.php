@@ -24,7 +24,8 @@ class MMOCommand extends PluginCommand{
 		$info = $c->get("$name");
 		$mining = $info["mining"];
 		$tree = $info["treecutting"];
-		$sender->sendMessage("§eYour MMO Stats:\n§fMining: §a$mining\n§fTreecutting: §a$tree");
+		$msg = str_replace(["[MINING]", "[TREECUTTING]", "[LINE]"], [$mining, $tree, "\n"], MMO::getMain()->getConfig()->get("stats.message"));
+		$sender->sendMessage($msg);
 
 	}
 

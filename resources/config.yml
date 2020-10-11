@@ -25,3 +25,11 @@ treecutting.lvl3: 1000
 treecutting.lvl4: 2500
 
 treecutting.lvl5: 5000
+
+## Messages
+levelup.mining: "§aYou are now Mining Level §e[LEVEL]§a. You have now a [LEVELPERCENT] Chance to get Double Ores"
+
+levelup.treecutting: "§aYou are now Treecutting Level §e[LEVEL]§a. You have now a [LEVELPERCENT] Chance to get an apple"
+
+# [MINING] = Mining Skill , [TREECUTTING] = Treecutting Skill , [LINE] = New line
+stats.message: "§aYour MMO Stats: [LINE] §bMining: [MINING] [LINE] §cTreecutting: [TREECUTTING]"

@@ -11,3 +11,7 @@ The MMO plugin for pocketmine servers
 - Explorer Skill
 - Murder Skill
 - Building Skill
+# Screenshots
+![](OwnStats.png)
+![](Levelup.png)
+![](SeeStats.png)

@@ -12,6 +12,8 @@ The MMO plugin for pocketmine servers
 - Murder Skill
 - Building Skill
 # Screenshots
-![Your Stats](OwnStats.png)
-![Levelup](Levelup.png)
-![See Stats](SeeStats.png)
+![](screenshots/OwnStats.png)
+
+![](screenshots/Levelup.png)
+
+![](screenshots/SeeStats.png)

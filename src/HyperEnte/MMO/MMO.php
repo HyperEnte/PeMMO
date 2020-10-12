@@ -3,6 +3,7 @@
 namespace HyperEnte\MMO;
 
 use HyperEnte\MMO\commands\MMOCommand;
+use HyperEnte\MMO\commands\SeeMMOCommand;
 use pocketmine\plugin\PluginBase;
 use pocketmine\Player;
 use pocketmine\utils\Config;
@@ -19,7 +20,8 @@ class MMO extends PluginBase{
 
 		$this->getServer()->getCommandMap()->registerAll("MMO",
 		[
-			new MMOCommand()
+			new MMOCommand(),
+			new SeeMMOCommand()
 		]);
 	}
 
@@ -38,22 +40,37 @@ class MMO extends PluginBase{
 		if($array["mining"] === $this->getConfig()->get("mining.lvl1")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["1", "10%"], $this->getConfig()->get("levelup.mining"));
 			$player->sendMessage($lvlmsg);
+			$array["mininglvl"] = (int)$array["mininglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 		if($array["mining"] === $this->getConfig()->get("mining.lvl2")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["2", "25%"], $this->getConfig()->get("levelup.mining"));
 			$player->sendMessage($lvlmsg);
+			$array["mininglvl"] = (int)$array["mininglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 		if($array["mining"] === $this->getConfig()->get("mining.lvl3")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["3", "50%"], $this->getConfig()->get("levelup.mining"));
 			$player->sendMessage($lvlmsg);
+			$array["mininglvl"] = (int)$array["mininglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 		if($array["mining"] === $this->getConfig()->get("mining.lvl4")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["4", "75%"], $this->getConfig()->get("levelup.mining"));
 			$player->sendMessage($lvlmsg);
+			$array["mininglvl"] = (int)$array["mininglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 		if($array["mining"] === $this->getConfig()->get("mining.lvl5")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["5", "100%"], $this->getConfig()->get("levelup.mining"));
 			$player->sendMessage($lvlmsg);
+			$array["mininglvl"] = (int)$array["mininglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 	}
 	public function giveTree(Player $player){
@@ -66,22 +83,37 @@ class MMO extends PluginBase{
 		if($array["treecutting"] === $this->getConfig()->get("treecutting.lvl1")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["1", "10%"], $this->getConfig()->get("levelup.treecutting"));
 			$player->sendMessage($lvlmsg);
+			$array["treecuttinglvl"] = (int)$array["treecuttinglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 		if($array["treecutting"] === $this->getConfig()->get("treecutting.lvl2")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["2", "25%"], $this->getConfig()->get("levelup.treecutting"));
 			$player->sendMessage($lvlmsg);
+			$array["treecuttinglvl"] = (int)$array["treecuttinglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 		if($array["treecutting"] === $this->getConfig()->get("treecutting.lvl3")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["3", "50%"], $this->getConfig()->get("levelup.treecutting"));
 			$player->sendMessage($lvlmsg);
+			$array["treecuttinglvl"] = (int)$array["treecuttinglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 		if($array["treecutting"] === $this->getConfig()->get("treecutting.lvl4")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["4", "75%"], $this->getConfig()->get("levelup.treecutting"));
 			$player->sendMessage($lvlmsg);
+			$array["treecuttinglvl"] = (int)$array["treecuttinglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 		if($array["treecutting"] === $this->getConfig()->get("treecutting.lvl5")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["5", "100%"], $this->getConfig()->get("levelup.treecutting"));
 			$player->sendMessage($lvlmsg);
+			$array["treecuttinglvl"] = (int)$array["treecuttinglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 	}
 	public function giveCrafting(Player $player){
@@ -94,22 +126,37 @@ class MMO extends PluginBase{
 		if($array["crafting"] === $this->getConfig()->get("crafting.lvl1")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["1", "10%"], $this->getConfig()->get("levelup.crafting"));
 			$player->sendMessage($lvlmsg);
+			$array["craftinglvl"] = (int)$array["craftinglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 		if($array["crafting"] === $this->getConfig()->get("crafting.lvl2")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["2", "25%"], $this->getConfig()->get("levelup.crafting"));
 			$player->sendMessage($lvlmsg);
+			$array["craftinglvl"] = (int)$array["craftinglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 		if($array["crafting"] === $this->getConfig()->get("crafting.lvl3")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["3", "50%"], $this->getConfig()->get("levelup.crafting"));
 			$player->sendMessage($lvlmsg);
+			$array["craftinglvl"] = (int)$array["craftinglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 		if($array["crafting"] === $this->getConfig()->get("crafting.lvl4")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["4", "75%"], $this->getConfig()->get("levelup.crafting"));
 			$player->sendMessage($lvlmsg);
+			$array["craftinglvl"] = (int)$array["craftinglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 		if($array["crafting"] === $this->getConfig()->get("crafting.lvl5")){
 			$lvlmsg = str_replace(["[LEVEL]", "[LEVELPERCENT]"], ["5", "100%"], $this->getConfig()->get("levelup.crafting"));
 			$player->sendMessage($lvlmsg);
+			$array["craftinglvl"] = (int)$array["craftinglvl"]+1;
+			$c->set("$name", $array);
+			$c->save();
 		}
 	}
 }

@@ -2,40 +2,145 @@
 #### PE MMO ######
 ##################
 
-## Level Requirements
+### Levels
 
-# Mining (How many blocks should the player have to break)
-mining.lvl1: 128
+## Mining (How many blocks should the player have to break)
 
+# Blocks to break for level 1
+mining.lvl1: 250
+# Percent on level 1 to get a double drop
+mining.lvl1.percent: 10
+
+# Blocks to break for level 2
 mining.lvl2: 500
+# Percent on level 2 to get a double drop
+mining.lvl2.percent: 25
 
+# Blocks to break for level 3
 mining.lvl3: 1000
+# Percent on level 3 to get a double drop
+mining.lvl3.percent: 50
 
+# Blocks to break for level
 mining.lvl4: 2500
+# Percent on level 4 to get a double drop
+mining.lvl4.percent: 75
 
+# Blocks to break for level 5
 mining.lvl5: 5000
+# Percent on level 5 to get a double drop
+mining.lvl5.percent: 100
 
-# Tree cutting
-treecutting.lvl1: 128
 
+# Mining Doubledrop Item
+
+# Stone Doubledrop (4 = Cobblestone)
+stone:
+  id: 4
+  meta: 0
+  amount: 2
+# Cobblestone Doubledrop (4 = Cobblestone)
+cobblestone:
+  id: 4
+  meta: 0
+  amount: 2
+# Coal Doubledrop (263 = Coal)
+coal:
+  id: 263
+  meta: 0
+  amount: 2
+# Iron Doubledrop (15 = Iron Ore)
+iron:
+  id: 15
+  meta: 0
+  amount: 2
+# Gold Doubledrop (14 = Gold Ore)
+gold:
+  id: 14
+  meta: 0
+  amount: 2
+# Lapis Doubledrop (351, meta 4 = Lapis)
+lapis:
+  id: 351
+  meta: 4
+  amount: 10
+# Redstone Doubledrop (331 = Redstone)
+redstone:
+  id: 331
+  meta: 0
+  amount: 10
+# Diamond Doubledrop (264 = Diamond)
+diamond:
+  id: 264
+  meta: 0
+  amount: 2
+# Emerald Doubledrop (388 = Emerald)
+emerald:
+  id: 388
+  meta: 0
+  amount: 2
+# Obsidian Doubledrop (49 = Obsidian)
+obsidian:
+  id: 49
+  meta: 0
+  amount: 2
+
+## Tree cutting (How many logs should the player have to break)
+
+# Logs to break for level 1
+treecutting.lvl1: 250
+# Percent on level 1 to get an extra drop
+treecutting.lvl1.percent: 10
+
+# Logs to break for level 2
 treecutting.lvl2: 500
+# Percent on level 2 to get an extra drop
+treecutting.lvl2.percent: 25
 
+# Logs to break for level 3
 treecutting.lvl3: 1000
+# Percent on level 3 to get an extra drop
+treecutting.lvl3.percent: 50
 
+# Logs to break for level 4
 treecutting.lvl4: 2500
+# Percent on level 4 to get an extra drop
+treecutting.lvl4.percent: 75
 
+# Logs to break for level 5
 treecutting.lvl5: 5000
+# Percent on level 5 to get an extra drop
+treecutting.lvl5.percent: 100
 
-# Crafting
+# Use the Item ID (264 = Diamond)
+treecutting.reward.item: 264
+
+## Crafting (How many items should the player have to craft)
+
+# Items to craft for level 1
 crafting.lvl1: 64
+# Percent on level 1 to get an extra item
+crafting.lvl1.percent: 10
 
+# Items to craft for level 2
 crafting.lvl2: 128
+# Percent on level 2 to get an extra item
+crafting.lvl2.percent: 20
 
+# Items to craft for level 3
 crafting.lvl3: 256
+# Percent on level 3 to get an extra item
+crafting.lvl3.percent: 30
 
+# Items to craft for level 4
 crafting.lvl4: 512
+# Percent on level 4 to get an extra item
+crafting.lvl4.percent: 40
 
+# Items to craft for level 5
 crafting.lvl5: 1028
+# Percent on level 5 to get an extra item
+crafting.lvl5.percent: 50
 
 # Use the Item ID (264 = Diamond)
 crafting.reward.item: 264
@@ -43,9 +148,18 @@ crafting.reward.item: 264
 ## Messages
 levelup.mining: "§aYou are now Mining Level §e[LEVEL]§a. You have now a [LEVELPERCENT] Chance to get Double Ores"
 
-levelup.treecutting: "§aYou are now Treecutting Level §e[LEVEL]§a. You have now a [LEVELPERCENT] Chance to get an apple"
+levelup.treecutting: "§aYou are now Treecutting Level §e[LEVEL]§a. You have now a [LEVELPERCENT] Chance to get a bonus item"
 
 levelup.crafting: "§aYou are now Crafting Level §e[LEVEL]§a. You have now a [LEVELPERCENT] Chance to get a bonus item"
 
 # [MINING] = Mining Skill , [TREECUTTING] = Treecutting Skill , [LINE] = New line
 stats.message: "§aYour MMO Stats: [LINE] §bMining: [MINING] [LINE] §cTreecutting: [TREECUTTING] [LINE] §dCrafting: [CRAFTING]"
+
+# [MINING] = Mining Skill , [TREECUTTING] = Treecutting Skill , [LINE] = New line , [PLAYER] = Player
+seestats.message: "§a[PLAYER]'s MMO Stats: [LINE] §bMining: [MINING] [LINE] §cTreecutting: [TREECUTTING] [LINE] §dCrafting: [CRAFTING]"
+
+# This message shows up, if the player dont has the permission to perform the /seemmo Command
+noperm: "§cYou don't have the permission to do this"
+
+# This message shows up, if the sender of the /seemmo Command didn't defined a player
+define.player: "§cPlease use the Command like /seemmo PLAYERNAME"

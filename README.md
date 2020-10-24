@@ -4,13 +4,13 @@ The MMO plugin for pocketmine servers
 - Mining Skill
 - Foraging / Treecutting Skill
 - Crafting Skill
+- Building Skill
 - Levelup Rewards
 - Custom Config
 # Comming Features
 - Combat / Hunter Skill
 - Explorer Skill
 - Murder Skill
-- Building Skill
 # Screenshots
 ![](screenshots/OwnStats.png)
 

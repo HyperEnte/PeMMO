@@ -3,6 +3,7 @@
 namespace HyperEnte\MMO;
 
 use pocketmine\block\Block;
+use pocketmine\event\block\BlockPlaceEvent;
 use pocketmine\event\inventory\CraftItemEvent;
 use pocketmine\event\Listener;
 use pocketmine\item\Item;
@@ -17,7 +18,7 @@ class EventListener implements Listener{
 		$c = new Config(MMO::getMain()->getDataFolder()."/MMOStats/mmo.json", Config::JSON);
 		$name = $event->getPlayer()->getName();
 		if($c->get($name) == false) {
-			$c->set("$name", ["mining" => 0, "mininglvl" => 0, "treecutting" => 0, "treecuttinglvl" =>0, "crafting" => 0, "craftinglvl" => 0]);
+			$c->set("$name", ["mining" => 0, "mininglvl" => 0, "treecutting" => 0, "treecuttinglvl" =>0, "crafting" => 0, "craftinglvl" => 0, "building" => 0, "buildinglvl" => 0]);
 			$c->save();
 		}
 
@@ -304,6 +305,45 @@ class EventListener implements Listener{
 			$percent = MMO::getMain()->getConfig()->get("crafting.lvl5.percent") * 10;
 			if(mt_rand(1, 1000) % $percent <= 0) {
 				$player->getInventory()->addItem(Item::get(MMO::getMain()->getConfig()->get("crafting.reward.item")));
+			}
+		}
+	}
+
+	public function onBuild(BlockPlaceEvent $event){
+
+		$player = $event->getPlayer();
+		$name = $player->getName();
+		MMO::getMain()->giveCrafting($event->getPlayer());
+		$c = new Config(MMO::getMain()->getDataFolder()."/MMOStats/mmo.json", Config::JSON);
+		$info = $c->get("$name");
+		if($info["buildinglvl"] === 1){
+			$percent = MMO::getMain()->getConfig()->get("building.lvl1.percent") * 10;
+			if(mt_rand(1, 1000) % $percent <= 0) {
+				$player->getInventory()->addItem(Item::get(MMO::getMain()->getConfig()->get("building.reward.item")));
+			}
+		}
+		if($info["buildinglvl"] === 2){
+			$percent = MMO::getMain()->getConfig()->get("building.lvl2.percent") * 10;
+			if(mt_rand(1, 1000) % $percent <= 0) {
+				$player->getInventory()->addItem(Item::get(MMO::getMain()->getConfig()->get("building.reward.item")));
+			}
+		}
+		if($info["buildinglvl"] === 3){
+			$percent = MMO::getMain()->getConfig()->get("building.lvl3.percent") * 10;
+			if(mt_rand(1, 1000) % $percent <= 0) {
+				$player->getInventory()->addItem(Item::get(MMO::getMain()->getConfig()->get("building.reward.item")));
+			}
+		}
+		if($info["buildinglvl"] === 4){
+			$percent = MMO::getMain()->getConfig()->get("building.lvl4.percent") * 10;
+			if(mt_rand(1, 1000) % $percent <= 0) {
+				$player->getInventory()->addItem(Item::get(MMO::getMain()->getConfig()->get("building.reward.item")));
+			}
+		}
+		if($info["buildinglvl"] === 5){
+			$percent = MMO::getMain()->getConfig()->get("building.lvl5.percent") * 10;
+			if(mt_rand(1, 1000) % $percent <= 0) {
+				$player->getInventory()->addItem(Item::get(MMO::getMain()->getConfig()->get("building.reward.item")));
 			}
 		}
 	}

@@ -38,7 +38,12 @@ class SeeMMOCommand extends PluginCommand {
 		$mining = $info["mining"];
 		$tree = $info["treecutting"];
 		$crafting = $info["crafting"];
-		$msg = str_replace(["[MINING]", "[TREECUTTING]", "[CRAFTING]", "[LINE]", "[PLAYER]"], [$mining, $tree, $crafting, "\n", $name], MMO::getMain()->getConfig()->get("seestats.message"));
+		$building = $info["building"];
+		$mininglvl = $info["mininglvl"];
+		$treelvl = $info["treecuttinglvl"];
+		$craftinglvl = $info["craftinglvl"];
+		$buildinglvl = $info["buildinglvl"];
+		$msg = str_replace(["[MINING]", "[TREECUTTING]", "[CRAFTING]", "[BUILDING]", "[LINE]", "[PLAYER]", "[MININGLEVEL]", "[TREECUTTINGLEVEL]", "[CRAFTINGLEVEL]", "[BUILDINGLEVEL]"], [$mining, $tree, $crafting, $building, "\n", $name, $mininglvl, $treelvl, $craftinglvl, $buildinglvl], MMO::getMain()->getConfig()->get("seestats.message"));
 		$sender->sendMessage($msg);
 		return false;
 	}

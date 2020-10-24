@@ -2,6 +2,9 @@
 #### PE MMO ######
 ##################
 
+# Don't change this
+version: 0.1.2
+
 ### Levels
 
 ## Mining (How many blocks should the player have to break)
@@ -145,6 +148,36 @@ crafting.lvl5.percent: 50
 # Use the Item ID (264 = Diamond)
 crafting.reward.item: 264
 
+## Building (How many items should the player have to build)
+
+# Blocks to place for level 1
+building.lvl1: 100
+# Percent on level 1 to get an extra item
+building.lvl1.percent: 10
+
+# Blocks to place for level 2
+building.lvl2: 500
+# Percent on level 2 to get an extra item
+building.lvl2.percent: 20
+
+# Blocks to place for level 3
+building.lvl3: 1000
+# Percent on level 3 to get an extra item
+building.lvl3.percent: 30
+
+# Blocks to place for level 4
+building.lvl4: 2500
+# Percent on level 4 to get an extra item
+building.lvl4.percent: 40
+
+# Blocks to place for level 5
+building.lvl5: 5000
+# Percent on level 5 to get an extra item
+building.lvl5.percent: 50
+
+# Use the Item ID (264 = Diamond)
+building.reward.item: 264
+
 ## Messages
 levelup.mining: "§aYou are now Mining Level §e[LEVEL]§a. You have now a [LEVELPERCENT] Chance to get Double Ores"
 
@@ -152,11 +185,13 @@ levelup.treecutting: "§aYou are now Treecutting Level §e[LEVEL]§a. You have n
 
 levelup.crafting: "§aYou are now Crafting Level §e[LEVEL]§a. You have now a [LEVELPERCENT] Chance to get a bonus item"
 
+levelup.building: "§aYou are now Building Level §e[LEVEL]§a. You have now a [LEVELPERCENT] Chance to get a bonus item"
+
 # [MINING] = Mining Skill , [TREECUTTING] = Treecutting Skill , [LINE] = New line
-stats.message: "§aYour MMO Stats: [LINE] §bMining: [MINING] [LINE] §cTreecutting: [TREECUTTING] [LINE] §dCrafting: [CRAFTING]"
+stats.message: "§aYour MMO Stats: [LINE] §bMining: [MINING] (Level [MININGLEVEL] )  [LINE] §cTreecutting: [TREECUTTING] (Level [TREECUTTINGLEVEL] ) [LINE] §dCrafting: [CRAFTING] (Level [CRAFTINGLEVEL] ) [LINE] §eBuilding: [BUILDING] (Level [BUILDINGLEVEL] )"
 
 # [MINING] = Mining Skill , [TREECUTTING] = Treecutting Skill , [LINE] = New line , [PLAYER] = Player
-seestats.message: "§a[PLAYER]'s MMO Stats: [LINE] §bMining: [MINING] [LINE] §cTreecutting: [TREECUTTING] [LINE] §dCrafting: [CRAFTING]"
+seestats.message: "§a[PLAYER]'s MMO Stats: [LINE] §bMining: [MINING] (Level [MININGLEVEL] )  [LINE] §cTreecutting: [TREECUTTING] (Level [TREECUTTINGLEVEL] ) [LINE] §dCrafting: [CRAFTING] (Level [CRAFTINGLEVEL] ) [LINE] §eBuilding: [BUILDING] (Level [BUILDINGLEVEL] )"
 
 # This message shows up, if the player dont has the permission to perform the /seemmo Command
 noperm: "§cYou don't have the permission to do this"

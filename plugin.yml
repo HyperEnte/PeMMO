@@ -5,7 +5,7 @@ api: 3.0.0
 author: HyperEnte
 
 permissions:
-  cmd.mmo:
+  pemmo.cmd.mmo:
     default: true
-  cmd.seemmo:
+  pemmo.cmd.seemmo:
     default: op

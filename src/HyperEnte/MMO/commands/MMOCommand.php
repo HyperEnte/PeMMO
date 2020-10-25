@@ -15,7 +15,7 @@ class MMOCommand extends PluginCommand{
 	public function __construct(){
 		parent::__construct("mmo", MMO::getMain());
 		$this->setDescription("See your MMO Stats");
-		$this->setPermission("cmd.mmo");
+		$this->setPermission("pemmo.cmd.mmo");
 	}
 
 	public function execute(CommandSender $sender, string $commandLabel, array $args){

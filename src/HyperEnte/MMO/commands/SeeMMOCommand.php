@@ -14,7 +14,7 @@ class SeeMMOCommand extends PluginCommand {
 	public function __construct(){
 		parent::__construct("seemmo", MMO::getMain());
 		$this->setDescription("See someone elses MMO Stats");
-		$this->setPermission("cmd.seemmo");
+		$this->setPermission("pemmo.cmd.seemmo");
 	}
 
 	public function execute(CommandSender $sender, string $commandLabel, array $args){

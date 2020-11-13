@@ -3,6 +3,7 @@ main: HyperEnte\MMO\MMO
 version: 0.1.2
 api: 3.0.0
 author: HyperEnte
+description: The MMO plugin for Pocketmine
 
 permissions:
   pemmo.cmd.mmo:
